@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results Array is correct 1`] = `
+<div>
+  <ul>
+    <li>
+      <h2>
+        Yo
+         - 
+        2015
+      </h2>
+      <div>
+        <span>
+          Movie has 
+          0
+           likes
+        </span>
+        <button
+          onClick={[Function]}
+        >
+          Like
+        </button>
+      </div>
+      <img
+        src="xx"
+      />
+    </li>
+    <li>
+      <h2>
+        We love testing
+         - 
+        2017
+      </h2>
+      <div>
+        <span>
+          Movie has 
+          0
+           likes
+        </span>
+        <button
+          onClick={[Function]}
+        >
+          Like
+        </button>
+      </div>
+      <img
+        src="fkjn"
+      />
+    </li>
+    <li>
+      <h2>
+        CDXF
+         - 
+        2019
+      </h2>
+      <div>
+        <span>
+          Movie has 
+          0
+           likes
+        </span>
+        <button
+          onClick={[Function]}
+        >
+          Like
+        </button>
+      </div>
+      <img
+        src="faslfdk"
+      />
+    </li>
+  </ul>
+</div>
+`;
