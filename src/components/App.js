@@ -1,33 +1,38 @@
-import React from 'react';
-import Welcome from './Welcome';
-import MovieSearch from './MovieSearch';
-import MovieResults from './MovieResults';
+import React from "react";
+import Welcome from "./Welcome";
+import MovieSearch from "./MovieSearch";
+import MovieResults from "./MovieResults";
 
 class App extends React.Component {
-
-  constructor(){
+  constructor() {
     super();
 
     this.state = {
       movies: [],
-      movieString: ''
+      movieString: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.submitSearch = this.submitSearch.bind(this);
   }
 
-  handleChange(movieString){
-    this.setState({movieString});
+  handleChange(movieString) {
+    this.setState({ movieString });
   }
 
-  submitSearch(movieString){
-    fetch(`http://www.omdbapi.com/?s=${movieString}&apikey=2cda7206`)
+  submitSearch(movieString) {
+    return fetch(`http://www.omdbapi.com/?s=${movieString}&apikey=2cda7206`)
       .then(response => response.json())
-      .then(result => this.setState({movies: result.Search}));
+      .then(result => {
+        if (result.Search === undefined) {
+          this.setState({ movies: [] });
+        } else {
+          this.setState({ movies: result.Search });
+        }
+      });
   }
 
-  render(){
+  render() {
     return (
       <div>
         <Welcome />
@@ -38,7 +43,7 @@ class App extends React.Component {
         />
         <MovieResults movies={this.state.movies} />
       </div>
-    )
+    );
   }
 }
 
